@@ -8,5 +8,9 @@ export default $config({
       home: "aws",
     };
   },
-  async run() {},
+  async run() {
+    return {
+      foo: "1"
+    }
+  },
 });

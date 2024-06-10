@@ -18,7 +18,7 @@ export default $config({
   },
   async run() {
     return {
-      foo: "7",
+      foo: "8",
     };
   },
 });

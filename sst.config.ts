@@ -10,7 +10,7 @@ export default $config({
   },
   async run() {
     return {
-      foo: "1"
+      foo: "2"
     }
   },
 });

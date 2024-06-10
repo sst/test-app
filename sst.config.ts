@@ -13,8 +13,7 @@ export default $config({
       architecture: "arm64",
     }),
     target(event) {
-      if (event.type === "push") return { stage: "production" };
-      return event.type === "push" ? { stage: "production" } : undefined;
+      if (event.type === "push") return { stage: event.branch };
     },
   },
   async run() {

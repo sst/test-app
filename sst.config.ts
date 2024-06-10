@@ -8,6 +8,14 @@ export default $config({
       home: "aws",
     };
   },
+  ci: {
+    target(event) {
+      if (event.type === "push")
+        return { stage: "production" };
+      return event.type === "push" ? { stage: "production" }
+        : undefined;
+    }
+  },
   async run() {
     return {
       foo: "2"

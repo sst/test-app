@@ -16,6 +16,14 @@ export default $config({
       if (event.type === "push") return { stage: event.branch };
     },
   },
+  autodeploy: {
+    runner: (input) => {},
+    target: (event) => {
+      return { stage: "master" };
+    },
+    steps: (event) => {},
+  },
+
   async run() {
     return {
       foo: "9",

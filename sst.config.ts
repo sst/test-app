@@ -8,20 +8,14 @@ export default $config({
       home: "aws",
     };
   },
-  ci: {
-    runner: (input) => ({
-      architecture: "arm64",
-    }),
-    target(event) {
-      if (event.type === "push") return { stage: event.branch };
+  console: {
+    autodeploy: {
+      runner: (input) => {},
+      target: (event) => {
+        return { stage: "master" };
+      },
+      steps: (event) => {},
     },
-  },
-  autodeploy: {
-    runner: (input) => {},
-    target: (event) => {
-      return { stage: "master" };
-    },
-    steps: (event) => {},
   },
 
   async run() {
